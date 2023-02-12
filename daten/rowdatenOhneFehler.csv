@@ -1,0 +1,3 @@
+id;art;lagerort;tkz;bezeichnung;mengeneinheit;warengruppe;grunddatentext(de);grunddatentext(en);einkaeufer;
+1;NLF;3000;S1234;Testmaterial-ABCD;ST;030300;DE-Testmaterial1;EN-Testmaterial1;Z99;
+2;NLF;3000;S4711;Testmaterial-XYZ;M;030200;DE-Testmaterial2;EN-Testmaterial2;D53;

@@ -1,0 +1,13 @@
+/.gradle/
+/build/
+/docker/dbdata/
+/docker/autodeploy/
+/docker/autodeploy/.autodeploystatus/
+# Eclipse Stuff
+.project
+.settings/
+**/*.log
+.pmd
+.eclipse-pmd
+/bin/
+.classpath

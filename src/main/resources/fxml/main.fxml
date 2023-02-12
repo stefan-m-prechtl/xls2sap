@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane minWidth="600.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+	<bottom>
+		<AnchorPane prefHeight="29.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+			<children>
+				<Separator prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+				<Label fx:id="lblStatusZeile" style="-fx-text-fill: blue;" text="Statuszeile der gegenwärtigen Aktion" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" />
+				<Label fx:id="lblCurrentUser" text="kein Benutzer angemeldet" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+			</children>
+			<padding>
+				<Insets bottom="5.0" right="5.0" top="5.0" />
+			</padding>
+		</AnchorPane>
+	</bottom>
+	<center>
+		<SplitPane dividerPositions="0.2" BorderPane.alignment="CENTER">
+			<items>
+				<AnchorPane fx:id="panLeft" prefHeight="200.0" prefWidth="200.0">
+					<children>
+						<VBox prefHeight="200.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<children>
+								<HBox alignment="CENTER" prefHeight="32.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="NEVER">
+									<children>
+										<Label snapToPixel="false" text="Datei" HBox.hgrow="NEVER" />
+										<TextField fx:id="txtFile" prefHeight="24.0" prefWidth="156.0" HBox.hgrow="SOMETIMES" />
+									</children>
+									<opaqueInsets>
+										<Insets right="5.0" />
+									</opaqueInsets>
+								</HBox>
+								<ListView fx:id="lvwRowdata" prefHeight="362.0" prefWidth="191.0" VBox.vgrow="ALWAYS" />
+                        <TitledPane fx:id="panFehler" animated="false" expanded="false" prefHeight="30.0" prefWidth="191.0" text="Fehler" VBox.vgrow="ALWAYS">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tvwFehler" prefHeight="180.0" prefWidth="189.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                      	<TableColumn fx:id="colFehlerMeldung" prefWidth="100.0" text="Meldung" />
+                                        <TableColumn fx:id="colFehlerAttribut" prefWidth="75.0" text="Wert" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+							</children>
+						</VBox>
+					</children>
+					<padding>
+						<Insets left="5.0" right="5.0" top="5.0" />
+					</padding>
+				</AnchorPane>
+				<StackPane fx:id="panCenter">
+					<children>
+						<AnchorPane fx:id="panRowData" prefHeight="200.0" prefWidth="200.0">
+							<children>
+								<TableView fx:id="tvwRawData" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+									<columns>
+									</columns>
+								</TableView>
+							</children>
+						</AnchorPane>
+						<AnchorPane fx:id="panSAPData" prefHeight="262.0" prefWidth="608.0">
+							<children>
+								<HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="600.0" spacing="5.0">
+									<children>
+										<Label text="Materialart" />
+										<TextField fx:id="txtMaterialart" />
+										<Label text="Lagerort" />
+										<TextField fx:id="txtLagerort" />
+									</children>
+									<padding>
+										<Insets bottom="5.0" />
+									</padding>
+								</HBox>
+								<TabPane fx:id="panSichten" layoutY="29.0" prefHeight="640.0" prefWidth="603.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="25.0">
+									<tabs>
+										<Tab fx:id="tabGrunddatenEins" text="Grunddaten 1">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwGrunddatenEins" prefHeight="169.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn fx:id="colGrunddatenFeld" prefWidth="150.0" text="SAP-Feld" />
+																<TableColumn fx:id="colGrunddatenWert" prefWidth="200.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab fx:id="tabKlassifizierung" text="Klassifizierung">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwKlassifizierung" prefHeight="169.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn prefWidth="109.0" text="Klasse" />
+																<TableColumn prefWidth="81.0" text="Merkmal" />
+																<TableColumn prefWidth="125.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab fx:id="tabEinkauf" text="Einkauf">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwEinkauf" prefHeight="169.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn fx:id="colEinkaufFeld" prefWidth="109.0" text="SAP-Feld" />
+																<TableColumn fx:id="colEinkaufWert" prefWidth="125.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab fx:id="tabDispoEins" text="Disposition 1">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwDispoEins" prefHeight="169.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn fx:id="colDispoEinsFeld" prefWidth="109.0" text="SAP-Feld" />
+																<TableColumn fx:id="colDispoEinsWert" prefWidth="125.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab fx:id="tabDispoZwei" text="Disposition 2">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwDispoZwei" prefHeight="169.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn fx:id="colDispoZweiFeld" prefWidth="109.0" text="SAP-Feld" />
+																<TableColumn fx:id="colDispoZweiWert" prefWidth="125.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab fx:id="tabDispoDrei" text="Disposition 3">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwDispoDrei" prefHeight="169.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn fx:id="colDisopDreiFeld" prefWidth="109.0" text="SAP-Feld" />
+																<TableColumn fx:id="colDisopDreiWert" prefWidth="125.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab fx:id="tabDispoVier" text="Disposition 4">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwDispoVier" prefHeight="169.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn fx:id="colDispoVierFeld" prefWidth="109.0" text="SAP-Feld" />
+																<TableColumn fx:id="colDispoVierWert" prefWidth="125.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab fx:id="tabAV" text="Arbeitsvorbereitung">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwAV" prefHeight="169.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn fx:id="colAVFeld" prefWidth="109.0" text="SAP-Feld" />
+																<TableColumn fx:id="colAVWert" prefWidth="125.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab fx:id="tabWerksdatenEins" text="Werksdaten/Lagerung 1">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwabWerksdatenEins" prefHeight="169.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn fx:id="colWerksdatenEinsFeld" prefWidth="109.0" text="SAP-Feld" />
+																<TableColumn fx:id="colWerksdatenEinsWert" prefWidth="125.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab fx:id="tabWerksdatenZwei" text="Werksdaten/Lagerung 2">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+													<children>
+														<TableView fx:id="tvwabWerksdatenZwei" prefHeight="169.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+															<columns>
+																<TableColumn fx:id="colWerksdatenZweiFeld" prefWidth="109.0" text="SAP-Feld" />
+																<TableColumn fx:id="colWerksdatenZweiWert" prefWidth="125.0" text="Wert" />
+															</columns>
+														</TableView>
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+									</tabs>
+								</TabPane>
+							</children>
+							<padding>
+								<Insets bottom="5.0" right="5.0" top="5.0" />
+							</padding>
+						</AnchorPane>
+					</children>
+				</StackPane>
+			</items>
+		</SplitPane>
+	</center>
+	<top>
+		<VBox prefHeight="66.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+			<children>
+				<MenuBar>
+					<menus>
+						<Menu mnemonicParsing="false" text="Anwendung">
+							<items>
+								<MenuItem fx:id="mnuExitFile" mnemonicParsing="false" text="Beenden" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Anzeige">
+							<items>
+								<MenuItem fx:id="mnuXLSData" mnemonicParsing="false" text="XLS-Daten anzeigen" />
+								<MenuItem fx:id="mnuSAPData" mnemonicParsing="false" text="SAP-Daten anzeigen" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Hilfe">
+							<items>
+								<MenuItem fx:id="mnuOpenHelp" mnemonicParsing="false" text="Hilfe öffnen..." />
+								<MenuItem fx:id="mnuAboutHelp" mnemonicParsing="false" text="Über" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+				<ToolBar prefHeight="40.0" prefWidth="200.0">
+					<items>
+						<Button fx:id="btnLoad" mnemonicParsing="false" text="Laden" />
+						<Button fx:id="btnCheck" mnemonicParsing="false" text="Prüfen" />
+						<Button fx:id="btnImport" mnemonicParsing="false" text="Importieren" />
+					</items>
+				</ToolBar>
+			</children>
+		</VBox>
+	</top>
+</BorderPane>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<ruleset name="UVA Ruleset">
+	<description>
+		PMD Configuration UVA-Tool Frontend
+	</description>
+
+	<rule ref="category/java/bestpractices.xml">
+		<exclude name="UnusedAssignment" />
+		<exclude name="ForLoopCanBeForeach" />
+		<exclude name="UseTryWithResources" />
+		<exclude name="PreserveStackTrace" />
+		<exclude name="JUnitTestContainsTooManyAsserts" />
+	</rule>
+
+	<rule ref="category/java/codestyle.xml">
+		<exclude name="UseUnderscoresInNumericLiterals" />
+		<exclude name="AtLeastOneConstructor" />
+		<exclude name="CommentDefaultAccessModifier" />
+		<exclude name="FieldNamingConventions" />
+		<exclude name="OnlyOneReturn" />
+		<exclude name="LongVariable" />
+		<exclude name="ShortVariable" />
+		<exclude name="UnnecessaryLocalBeforeReturn" />
+		<exclude name="UselessParentheses" />
+		<exclude name="UnnecessaryConstructor" />
+	</rule>
+
+	<rule ref="category/java/codestyle.xml/ShortClassName">
+		<properties>
+			<property name="minimum" value="3" />
+		</properties>
+	</rule>
+
+	<rule ref="category/java/codestyle.xml/TooManyStaticImports">
+		<properties>
+			<property name="maximumStaticImports" value="10" />
+		</properties>
+	</rule>
+
+
+	<rule ref="category/java/design.xml">
+		<exclude name="GodClass" />
+		<exclude name="DataClass" />
+		<exclude name="LawOfDemeter" />
+		<exclude name="SignatureDeclareThrowsException" />
+		<exclude name="LoosePackageCoupling" />
+		<exclude name="FinalFieldCouldBeStatic" />
+		<exclude name="MutableStaticState" />
+		<exclude name="AvoidCatchingGenericException" />
+		<exclude name="AvoidThrowingRawExceptionTypes" />
+		<exclude name="ImmutableField" />
+	</rule>
+
+	<rule ref="category/java/design.xml/ExcessiveImports">
+		<properties>
+			<property name="minimum" value="50" />
+		</properties>
+	</rule>
+
+
+	<rule ref="category/java/design.xml/TooManyMethods">
+		<properties>
+			<property name="maxmethods" value="40" />
+		</properties>
+	</rule>
+
+	<rule ref="category/java/design.xml/TooManyFields">
+		<properties>
+			<property name="maxfields" value="80" />
+		</properties>
+	</rule>
+
+
+	<rule ref="category/java/design.xml/CognitiveComplexity">
+		<properties>
+			<property name="reportLevel" value="25" />
+		</properties>
+	</rule>
+
+	<rule ref="category/java/design.xml/CyclomaticComplexity">
+		<properties>
+			<property name="classReportLevel" value="80" />
+			<property name="methodReportLevel" value="25" />
+			<property name="cycloOptions" value="" />
+		</properties>
+	</rule>
+
+	<rule ref="category/java/security.xml" />
+
+
+	<rule ref="category/java/errorprone.xml">
+		<exclude name="AvoidFieldNameMatchingMethodName" />
+		<exclude name="AvoidDuplicateLiterals" />
+		<exclude name="UseLocaleWithCaseConversions" />
+		<exclude name="TestClassWithoutTestCases" />
+		<exclude name="MissingSerialVersionUID" />
+	</rule>
+
+
+	<!-- <rule ref="category/java/documentation.xml" /> <rule ref="category/java/multithreading.xml" 
+		/> <rule ref="category/java/performance.xml" /> -->
+</ruleset>

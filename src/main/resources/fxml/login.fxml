@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<DialogPane expanded="false" prefHeight="178.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+	<content>
+		<AnchorPane prefHeight="50.0" prefWidth="200.0">
+			<children>
+				<GridPane AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES" minWidth="15.0" prefWidth="100.0" />
+						<ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="150.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<Label text="Kennung" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+						<Label text="Passwort" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+						<TextField fx:id="txtKennung" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                     		<tooltip><Tooltip text="Kennung muss mindestens drei Zeichen lang sein" /></tooltip>
+                     	</TextField>
+                     	<PasswordField fx:id="txtPasswort" GridPane.columnIndex="1" GridPane.rowIndex="1" >
+							<tooltip><Tooltip text="Passwort muss mindestens sechs Zeichen lang sein" /></tooltip>
+						</PasswordField>						
+					</children>
+				</GridPane>
+			</children>
+		</AnchorPane>
+	</content>
+	<buttonTypes>
+		<ButtonType fx:id="btnLogin" buttonData="OK_DONE" text="Ok" />
+		<ButtonType  fx:id="btnAbbrechen" buttonData="CANCEL_CLOSE" text="Abbrechen" />
+	</buttonTypes>
+</DialogPane>
